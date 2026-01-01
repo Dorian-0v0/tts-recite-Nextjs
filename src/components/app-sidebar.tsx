@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Plus, Settings, LogOut, MessageSquare } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { DialogDemo } from "./Dialog";
 
 // 模拟会话数据（实际项目中应从状态管理或 API 获取）
 const conversations = [
@@ -40,7 +41,8 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarHeader className="p-4">
         <div className="flex  gap-2">
-          <MessageSquare className="h-6 w-6 text-sidebar-primary" />
+          {/* 插入svg图标 */}
+           <img src="./TTS-log.svg" alt="logo" className="h-7 w-7" />
           <span className="font-bold">TSS-Ai带背</span>
         </div>
         <Button
@@ -78,22 +80,7 @@ export function AppSidebar() {
 
       <SidebarFooter className="p-4 border-t">
         <SidebarMenu>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <a href="/settings">
-                <Settings className="mr-2 h-4 w-4" />
-                设置
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
-          <SidebarMenuItem>
-            <SidebarMenuButton asChild>
-              <a href="/logout" className="text-destructive hover:text-destructive">
-                <LogOut className="mr-2 h-4 w-4" />
-                登出
-              </a>
-            </SidebarMenuButton>
-          </SidebarMenuItem>
+          <DialogDemo></DialogDemo>
           <SidebarMenuItem className="mt-4">
             <SidebarMenuButton className="justify-start gap-2">
               <Avatar className="h-6 w-6">
